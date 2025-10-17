@@ -33,9 +33,12 @@ See project root for `index.html`, `styles/styles.css`, `scripts/*.js`, `seed.js
 - Enter on record card opens Edit button focusable controls.
 - Save/Export/Import via keyboard accessible buttons.
 
+ demo video : https://youtu.be/rRaJnEp-wY8
 ## How to run locally
 1. Clone the repo and open in VS Code or any editor:
 ```bash
 git clone https://github.com/honore-lab/campus-life-planner.git
 cd campus-life-planner
 code .
+
+ 
