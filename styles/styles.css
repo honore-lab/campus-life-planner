@@ -1,0 +1,75 @@
+:root{
+  --bg:#ffffff;
+  --text:#0b0b0b;
+  --accent:#0b84ff;
+  --muted:#666;
+  --focus: #ffbf47;
+  --card:#f8f9fb;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);color:var(--text);line-height:1.4;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{left:0;top:0;width:auto;height:auto;padding:.5rem;background:var(--accent);color:#fff;}
+
+.header-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between}
+.site-header{border-bottom:1px solid #eee;padding:.5rem 0;background:linear-gradient(180deg,#fff, #fafcff)}
+
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:.5rem}
+.nav-list a{color:var(--muted);text-decoration:none}
+.nav-list a:focus, .nav-list a:hover{color:var(--text);outline:3px solid transparent}
+h1{font-size:1.25rem;margin:.25rem 0}
+h2{font-size:1.1rem;margin:.5rem 0}
+
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin:.5rem 0}
+.stat-card{background:var(--card);padding:.5rem;border-radius:8px;box-shadow:0 1px 0 rgba(0,0,0,.03);text-align:center}
+.trend-wrap{margin-top:.75rem}
+
+.controls{display:flex;flex-direction:column;gap:.5rem;margin:.5rem 0}
+.controls input, .controls select {padding:.5rem;border:1px solid #ddd;border-radius:6px}
+#records-list{display:grid;gap:.5rem;margin:.5rem 0}
+
+.item-card{background:#fff;border:1px solid #eee;padding:.6rem;border-radius:8px;display:flex;flex-direction:column;gap:.4rem}
+.card-row{display:flex;justify-content:space-between;align-items:center}
+.card-meta{display:flex;gap:.5rem;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+.card-actions{display:flex;gap:.25rem}
+
+button{cursor:pointer;padding:.45rem .6rem;border-radius:6px;border:1px solid #ddd;background:linear-gradient(180deg,#fff,#fafafa)}
+button:focus{outline:3px solid var(--focus)}
+.form-actions, .settings-actions{display:flex;gap:.5rem;margin-top:.5rem}
+
+label{font-weight:600;font-size:.9rem}
+input, textarea, select{width:100%;padding:.5rem;border:1px solid #ddd;border-radius:6px}
+.errors{color:#b00020;margin-top:.5rem;}
+
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+mark{background:yellow;color:inherit}
+
+/* focus visible for keyboard users */
+:focus{outline-offset:2px}
+
+/* breakpoints */
+@media(min-width: 480px){
+  .controls{flex-direction:row;align-items:center}
+  .stats-grid{grid-template-columns:repeat(4,1fr)}
+  #records-list{grid-template-columns:repeat(2,1fr)}
+  .item-card{flex-direction:row;align-items:center;justify-content:space-between}
+}
+@media(min-width: 1024px){
+  .container{padding:2rem}
+  #records-list{grid-template-columns:repeat(3,1fr)}
+}
+
+/* small animation */
+.item-card{transition:transform .12s ease, box-shadow .12s ease}
+.item-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(20,30,50,.06)}

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Life Planner</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 id="site-title">Campus Life Planner</h1>
+      <nav role="navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#dashboard" data-nav>Dashboard</a></li>
+          <li><a href="#records" data-nav>Records</a></li>
+          <li><a href="#add" data-nav>Add</a></li>
+          <li><a href="#settings" data-nav>Settings</a></li>
+          <li><a href="#about" data-nav>About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" role="main" class="container">
+    <section id="dashboard" aria-labelledby="dash-heading">
+      <h2 id="dash-heading">Dashboard</h2>
+      <div id="stats" class="stats-grid" role="region" aria-live="polite">
+        <div class="stat-card">
+          <strong id="total-records">0</strong>
+          <span>Total items</span>
+        </div>
+        <div class="stat-card">
+          <strong id="sum-duration">0</strong>
+          <span>Total duration (min)</span>
+        </div>
+        <div class="stat-card">
+          <strong id="top-tag">—</strong>
+          <span>Top tag</span>
+        </div>
+        <div class="stat-card">
+          <strong id="cap-status">No cap</strong>
+          <span>Cap status</span>
+        </div>
+      </div>
+
+      <div class="trend-wrap">
+        <h3>Last 7 days (minutes)</h3>
+        <div id="trend-chart" class="trend-chart" aria-hidden="false"></div>
+      </div>
+    </section>
+
+    <section id="records" aria-labelledby="records-heading">
+      <h2 id="records-heading">Tasks & Events</h2>
+
+      <div class="controls">
+        <label for="search-input">Regex search</label>
+        <input id="search-input" type="text" placeholder="Type regex (e.g. ^@tag:lab) ..." />
+        <label><input id="ci-toggle" type="checkbox" checked /> Case-insensitive</label>
+
+        <label for="sort-select">Sort</label>
+        <select id="sort-select">
+          <option value="date_desc">Date ↓</option>
+          <option value="date_asc">Date ↑</option>
+          <option value="title_asc">Title A→Z</option>
+          <option value="title_desc">Title Z→A</option>
+          <option value="duration_desc">Duration ↓</option>
+          <option value="duration_asc">Duration ↑</option>
+        </select>
+      </div>
+
+      <div id="records-list" aria-live="polite"></div>
+    </section>
+
+    <section id="add" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add / Edit Item</h2>
+      <form id="item-form" novalidate>
+        <input type="hidden" id="record-id" />
+
+        <label for="title">Title</label>
+        <input id="title" name="title" required aria-required="true" />
+
+        <label for="date">Due date</label>
+        <input id="date" name="date" type="date" required />
+
+        <label for="duration">Duration (minutes)</label>
+        <input id="duration" name="duration" inputmode="decimal" required />
+
+        <label for="tag">Tag (e.g., lab, homework)</label>
+        <input id="tag" name="tag" required />
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+
+        <div class="form-actions">
+          <button id="save-btn" type="submit">Save</button>
+          <button id="clear-btn" type="button">Clear</button>
+        </div>
+
+        <div id="form-errors" role="status" aria-live="assertive" class="errors"></div>
+      </form>
+    </section>
+
+    <section id="settings" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Settings</h2>
+      <form id="settings-form" novalidate>
+        <label for="cap">Weekly duration cap (minutes)</label>
+        <input id="cap" inputmode="numeric" />
+
+        <label for="units">Units</label>
+        <select id="units">
+          <option value="minutes">Minutes</option>
+          <option value="hours">Hours</option>
+        </select>
+
+        <div class="settings-actions">
+          <button id="save-settings" type="button">Save settings</button>
+          <button id="export-json" type="button">Export JSON</button>
+          <input id="import-file" type="file" accept="application/json" />
+        </div>
+
+        <div id="settings-status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Campus Life Planner — manage tasks, events and study sessions.</p>
+      <p>GitHub: <a href="https://github.com/honore-lab" target="_blank" rel="noopener">honore-lab</a></p>
+      <p>Email: <a href="mailto:honore@example.com">honore@example.com</a></p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <small>Built for class. Keyboard accessible. Mobile-first responsive UI.</small>
+    </div>
+  </footer>
+
+  <div id="aria-live" aria-live="polite" class="visually-hidden"></div>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

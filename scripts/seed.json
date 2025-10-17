@@ -1,0 +1,12 @@
+[
+  {"id":"rec_1","title":"Chemistry lab session","date":"2025-10-10","duration":120,"tag":"lab","notes":"Bring lab coat","createdAt":"2025-10-01T08:00:00Z","updatedAt":"2025-10-01T08:00:00Z"},
+  {"id":"rec_2","title":"Math homework","date":"2025-10-12","duration":45,"tag":"homework","notes":"Exercises 5-10","createdAt":"2025-10-02T09:00:00Z","updatedAt":"2025-10-02T09:00:00Z"},
+  {"id":"rec_3","title":"Group meeting","date":"2025-10-14","duration":60,"tag":"meeting","notes":"Discuss project","createdAt":"2025-10-03T10:00:00Z","updatedAt":"2025-10-03T10:00:00Z"},
+  {"id":"rec_4","title":"Physics lecture","date":"2025-10-08","duration":90,"tag":"lecture","notes":"Chapters 3-4","createdAt":"2025-09-29T07:00:00Z","updatedAt":"2025-09-29T07:00:00Z"},
+  {"id":"rec_5","title":"Read 'Modern Algebra'","date":"2025-10-11","duration":30,"tag":"reading","notes":"pages 120-130","createdAt":"2025-10-01T11:00:00Z","updatedAt":"2025-10-01T11:00:00Z"},
+  {"id":"rec_6","title":"Language practice","date":"2025-10-09","duration":25,"tag":"practice","notes":"vocab drill","createdAt":"2025-09-28T06:00:00Z","updatedAt":"2025-09-28T06:00:00Z"},
+  {"id":"rec_7","title":"Library time","date":"2025-10-13","duration":180,"tag":"study","notes":"quiet floor 2","createdAt":"2025-09-30T12:00:00Z","updatedAt":"2025-09-30T12:00:00Z"},
+  {"id":"rec_8","title":"Project presentation practice","date":"2025-10-15","duration":50,"tag":"presentation","notes":"rehearse slides","createdAt":"2025-10-05T13:00:00Z","updatedAt":"2025-10-05T13:00:00Z"},
+  {"id":"rec_9","title":"Soccer with friends","date":"2025-10-07","duration":70,"tag":"sport","notes":"bring shoes","createdAt":"2025-09-27T15:00:00Z","updatedAt":"2025-09-27T15:00:00Z"},
+  {"id":"rec_10","title":"Final review session","date":"2025-10-16","duration":200,"tag":"revision","notes":"past papers","createdAt":"2025-10-06T14:00:00Z","updatedAt":"2025-10-06T14:00:00Z"}
+]

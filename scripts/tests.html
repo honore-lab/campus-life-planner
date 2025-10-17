@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tests</title></head>
+<body>
+  <h1>Simple Tests</h1>
+  <pre id="out"></pre>
+  <script type="module">
+    import { patterns, duplicateWordRe, normalizeTitle } from './scripts/validators.js';
+    const out = document.getElementById('out');
+    const results = [];
+    results.push('Title valid: ' + patterns.title.test('Hello world'));
+    results.push('Title invalid leading space: ' + patterns.title.test(' Hello'));
+    results.push('Duration valid: ' + patterns.duration.test('120'));
+    results.push('Duration decimals valid: ' + patterns.duration.test('1.25'));
+    results.push('Date valid: ' + patterns.date.test('2025-10-15'));
+    results.push('Tag valid: ' + patterns.tag.test('lab-group'));
+    results.push('Duplicate word detect: ' + duplicateWordRe.test('test test'));
+    results.push('Normalize "  a   b  " -> "' + normalizeTitle('  a   b  ') + '"');
+    out.textContent = results.join('\n');
+  </script>
+</body>
+</html>
